@@ -1,0 +1,84 @@
+{% load static %}
+{% load wagtailcore_tags navigation_tags %}
+
+    {% get_site_root as site_root %}
+    <header>
+        <figure id="logo">
+            <figcaption>Alternators By</figcaption>
+            <img 
+                class="img-responsive"
+                alt="Quick Start Logo"
+                src={% static 'img/logo.jpg' %}
+            />
+            </a>
+        </figure>
+
+        <div id="brandinfo">
+            <div>
+                <p>Quick Start Automotive Electric&trade;</p>
+                <p>
+                    <a rel="nofollow" href="tel:+16167857990">Phone: (616) 785-7990</a> |
+                    <a rel="nofollow" href="tel:+16166065045">Google Voice: (616) 606-5045</a> (For Voice Messages)
+                </p>
+                <p> #1 High Output Alternator, Stock Amperage, Starters and more!<br>
+                <strong><em>"OVER 40 YEARS AUTO ELECTRIC EXPERIENCE in the USA"</em></strong>
+                <p>Free Information for Charging &amp; Starting System Troubleshooting<br>
+                    <a class="large" href="mailto:info@qsalts.com">Email: info@QSALTS.com</a>
+                </p>
+            </div>
+
+            <div>
+                <img 
+                src={% static 'img/flag.jpg' %}
+                alt="american flag">
+            </div>
+        </div>
+
+    </header>
+    <nav>
+        <div id="search">
+            <form
+                id="part-search"
+                role="search"
+                action="https://store.alternatorparts.com/search.aspx"
+                method="get">
+                <label for="find" class="sr-only">Search Pages:</label>
+                <input type="search" name="find" id="find" placeholder="Search Parts" />
+                <button type="submit">Find</button> 
+                <input type="hidden" name="search" value="1" />
+            </form>
+            <form
+                id="site-search"
+                role="search"
+                action="/search"
+                method="get">
+                <label for="query" class="sr-only">Search Pages:</label>
+                <input type="search" name="query" id="query" placeholder="Search Pages" />
+                <button type="submit">Search</button> 
+                <input type="hidden" name="search" value="1" />
+            </form>
+        </div>
+        <div id="menu">
+            <input type="checkbox" id="menu-button">
+            <label for="menu-button">Click for Menu</label>
+            <menu>
+                <li>
+                    <a href="{% pageurl site_root %}">Main Menu</a>
+                </li>
+                {% for menuitem in site_root.get_children.live.in_menu %}
+                <li>
+                    <a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
+                </li>
+                {% endfor %}
+                <li>
+                    <a rel='nofollow' href="https://www.youtube.com/c/alternatorman">Videos</a>
+                </li>
+                <li>
+                    <a href="/sales-policy">Sales Policy</a>
+                </li>
+                <li>
+                    <a href="/contact-us">Contact Us</a>
+                </li>
+            </menu>
+        </div>
+    </nav>

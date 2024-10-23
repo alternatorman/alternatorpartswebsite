@@ -1,0 +1,17 @@
+{% load wagtailcore_tags %}
+
+<table class="table table-striped product-list">
+	<thead>
+		<tr>
+			<td colspan="3">
+			<h2>{{ value.heading }}</h2>
+            {{ value.description }}
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+        {% for product in value.products %}
+            {% include_block product %}
+        {% endfor %}
+    </tbody>
+</table>

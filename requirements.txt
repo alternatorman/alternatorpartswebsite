@@ -1,0 +1,9 @@
+Django>=4.2,<5.1
+wagtail>=6.2,<6.3
+gunicorn
+psycopg2-binary
+django-storages[google]
+django-environ
+django-redis
+redis
+hiredis

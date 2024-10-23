@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "<5.1,>=4.2"
+wagtail = "<6.3,>=6.2"
+gunicorn = "*"
+psycopg2-binary = "*"
+django-storages = {extras = ["google"], version = "*"}
+django-environ = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags navigation_tags %}
+
+{% block body_class %}template-homeindexpage{% endblock %}
+
+{% block content %}
+    {% if page.heading is not none %}
+        <h1>{{ page.heading|safe }}</h1>
+    {% endif %}
+
+    <p><strong class="red">We value quality, attention to detail, and specifications are not the lowest price, Quality products are never the cheapest. Buy from Quick Start, we search out the best for you. </strong> <b> Using our years of experience to develop many innovative and unique solutions for Charging &amp; Starting problems </b></p>
+    
+    <div class="alert primary-light">
+        <p><strong>SECURE ONLINE CREDIT CARD PROCESSING BY PAYPAL <a href="#paypal" id="paypaltop"> Card Processing Details </a> </strong></p>
+    
+        <p>Shipping from multiple locations. Los Angles, CA, Orlando FL, Southaven MS, Allentown PA, Atlanta GA, Kansas MO, Cincinnati OH, Blaine MN. All products may not be available at all locations at all times. If you are in a hurry, call before ordering.</p>
+    </div>
+    
+    <div id="feature">
+        <p>Featured Products:</p>
+        
+        <div class="feature-box">
+        
+            <figure>
+                <a href="https://store.alternatorparts.com/external-voltage-regulator-kits.aspx"><img alt="ERCK - External Regulator Conversion Kit"  src={% static 'img/feature-1.jpg' %} /></a>
+                <figcaption><a href="https://alternatorparts.com/external-voltage-regulator-high-output-alternator-kit.html">Click for ERCK</a></figcaption>
+            </figure>
+            <figure>
+                <a href="https://alternatorparts.com/extreme-duty-dual-rectifier-cs-144-type.html"><img alt="CS144 Series Unit" src={% static 'img/feature-2.jpg' %} /> </a>
+                <figcaption><a href="https://alternatorparts.com/extreme-duty-dual-rectifier-cs-144-type.html">Click for GM Dual Rectifier CS144 Alternators</a></figcaption>
+            </figure>
+            <figure>
+                <a href="https://alternatorparts.com/quicktifier-external-bridge-rectifier.html"><img alt="quicktifier thumbnail" src={% static 'img/feature-3.jpg' %} /> </a>
+                <figcaption><a href="https://alternatorparts.com/quicktifier-external-bridge-rectifier.html">Click for Quicktifier External Rectifiers</a></figcaption>
+            </figure>
+            <figure>
+                <a href="https://alternatorparts.com/ad230-ad244-series-high-output-alternators.html"><img alt="ad244 series alternator" src={% static 'img/feature-4.jpg' %} /> </a>
+                <figcaption><a href="https://alternatorparts.com/ad230-ad244-series-high-output-alternators.html">Click for GM Heavy Duty AD244 Alternators</a></figcaption>
+            </figure>
+                        
+            <figure>
+                <a href="https://alternatorparts.com/6g-series-heavy-duty-alternator.html"><img alt="Ford PowerStroke Alternator" src={% static 'img/feature-5.jpg' %} /> </a>
+                <figcaption><a href="https://alternatorparts.com/6g-series-heavy-duty-alternator.html">Click for Ford Large Case 6G Power Stroke Alternators</a></figcaption>
+            </figure>
+            <figure>
+                <a href="https://store.alternatorparts.com/erckfrm-qs9414f-extra-heavy-duty-regulator-kit.aspx"><img alt="QS9414F Finned Regulator" src={% static 'img/feature-6.jpg' %} /> </a>
+                <figcaption><a href="https://store.alternatorparts.com/erckfrm-qs9414f-extra-heavy-duty-regulator-kit.aspx">Click for Our Super Cool Finned External Regulator Kit</a></figcaption>
+            </figure>
+        </div>
+    </div>
+
+    {% if page.menubox is not none %}
+        <div class="alert primary-dark" id="tagbox">
+        {{ page.menubox|safe }}
+        </div>
+    {% endif %}
+
+
+    <main>{{ page.body|richtext }}</main>
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script type="text/javascript" defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Google Analytics Code -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-251433-19', 'alternatorparts.com');
+    ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+    window.google_analytics_uacct = "UA-251433-19";
+    </script>
+{% endblock %}

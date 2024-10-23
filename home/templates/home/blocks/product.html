@@ -1,0 +1,13 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+		<tr>
+			<td>
+			<p><b class="red">${{ value.price }}</b></p> 
+			<form action="{{ value.url }}" class="desktop-cart" method="post"><input name="quantity" type="hidden" value="1" /> <input name="addtocart" src="{% static '/img/cart_btn_add.png' %}" type="image" />&nbsp;</form>
+
+			<form action="{{ value.url }}" class="mobile-cart" id="addToCartActionForm" method="get"><input id="quantityTextBox" name="quantityTextBox" type="hidden" value="1" /> <input class="addcart" id="addToCartAction" src="{% static '/img/cart_btn_add.png' %}" type="image" value="Add to cart" />&nbsp;</form>
+			</td>
+			<td>{% image value.photo width-80 %}</td>
+			<td><b>{{ value.sku }}</b>
+                {{ value.description }}
+			</td>
+		</tr>
