@@ -21,9 +21,7 @@ if "alternatorparts" not in INSTALLED_APPS:
 # If defined, add service URL to Django security settings
 CLOUDRUN_SERVICE_URL = env("CLOUDRUN_SERVICE_URL", default=None)
 if CLOUDRUN_SERVICE_URL:
-    ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc,
-            "wagtail-cloudrun-313520738970.us-central1.run.app",
-            ".alternatorparts.com"]
+    ALLOWED_HOSTS = [urlparse(CLOUDRUN_SERVICE_URL).netloc]
     CSRF_TRUSTED_ORIGINS = [CLOUDRUN_SERVICE_URL]
 else:
     ALLOWED_HOSTS = ["*"]
@@ -33,15 +31,15 @@ DEBUG = env("DEBUG", default=False)
 
 # Set this value from django-environ
 DATABASES = {"default": env.db()}
-CACHES = {
-    "default": {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://10.204.159.51:6379',
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-}
+#CACHES = {
+#    "default": {
+#        'BACKEND': 'django_redis.cache.RedisCache',
+#        'LOCATION': 'redis://10.204.159.51:6379',
+#        'OPTIONS': {
+#            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#        }
+#    }
+#}
 
 # Change database settings if using the Cloud SQL Auth Proxy
 if os.getenv("USE_CLOUD_SQL_AUTH_PROXY", None):
